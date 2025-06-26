@@ -60,4 +60,6 @@ if command -v ask-sh &> /dev/null; then
   eval "$(ask-sh --init)"
 fi
 
+# export HF_HOME="/workspace/.cache/huggingface/"
+
 cat $CONFIG_DIR/start.txt
