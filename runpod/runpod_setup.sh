@@ -23,7 +23,7 @@ chsh -s /usr/bin/zsh
 cd ..
 
 # 4) Setup github
-echo ./scripts/setup_github.sh "nevan.wichers@gmail.com" "Nevan Wichers"
+./setup_github.sh "nevan.wichers@gmail.com" "Nevan Wichers"
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 
