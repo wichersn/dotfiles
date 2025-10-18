@@ -64,4 +64,13 @@ fi
 
 export ANTHROPIC_MODEL="claude-opus-4-1-20250805"
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Each tmux session has a unique history file
+if [ -n "$TMUX" ]; then
+    export HISTFILE=~/.zsh_history_tmux_$(tmux display-message -p '#S:#I:#P')
+fi
+
 cat $CONFIG_DIR/start.txt
