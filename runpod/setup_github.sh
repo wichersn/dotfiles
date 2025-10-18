@@ -13,7 +13,7 @@ git config --global user.name "$name"
 
 # 1) Setup SSH key
 ssh-keygen -t ed25519 -C "$email" -f /root/.ssh/id_ed25519 -q -N ""
-echo "PUBLIC KEY"
+echo "PUBLIC KEY, add to https://github.com/settings/ssh/new"
 cat /root/.ssh/id_ed25519.pub
 # read -p "Have you added the SSH key to https://github.com/settings/keys? (y/Y/yes to continue): " response
 # while [[ ! "$response" =~ ^([yY][eE][sS]|[yY])$ ]]; do

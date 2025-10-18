@@ -8,10 +8,6 @@ sudo apt-get install -y less nano htop ncdu nvtop lsof rsync btop jq
 curl -LsSf https://astral.sh/uv/install.sh | sh
 source $HOME/.local/bin/env
 uv python install 3.11
-uv venv
-source .venv/bin/activate
-uv pip install ipykernel simple-gpu-scheduler # very useful on runpod with multi-GPUs https://pypi.org/project/simple-gpu-scheduler/
-python -m ipykernel install --user --name=venv # so it shows up in jupyter notebooks within vscode
 
 # 3) Setup dotfiles and ZSH
 mkdir git
@@ -26,6 +22,14 @@ chsh -s /usr/bin/zsh
 chmod +x ./runpod/setup_github.sh
 ./runpod/setup_github.sh "nevan.wichers@gmail.com" "Nevan Wichers"
 cd ..
+
+# 5) Copy SSH authorized_keys from workspace (if present)
+if [ -f "/workspace/.ssh/authorized_keys" ]; then
+mkdir -p "$HOME/.ssh"
+cp -f "/workspace/.ssh/authorized_keys" "$HOME/.ssh/authorized_keys"
+else
+echo "Warning: /workspace/.ssh/authorized_keys not found; skipping copy."
+fi
 
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh | bash
 

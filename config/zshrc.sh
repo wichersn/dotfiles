@@ -62,4 +62,6 @@ fi
 
 # export HF_HOME="/workspace/.cache/huggingface/"
 
+export ANTHROPIC_MODEL="claude-opus-4-1-20250805"
+
 cat $CONFIG_DIR/start.txt
