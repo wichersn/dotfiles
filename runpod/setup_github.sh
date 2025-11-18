@@ -1,7 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
-
 # Input arguments
 email=${1:-"nevan.wichers@gmail.com"}
 name=${2:-"Nevan Wichers"}
