@@ -74,3 +74,6 @@ if [ -n "$TMUX" ]; then
 fi
 
 cat $CONFIG_DIR/start.txt
+
+export UV_PYTHON_INSTALL_DIR=/workspace-vast/$(whoami)/.uv/python
+export UV_CACHE_DIR=/workspace-vast/$(whoami)/.cache/uv
