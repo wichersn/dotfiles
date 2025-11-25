@@ -51,7 +51,10 @@ if [ -n "${ALIASES+x}" ]; then
     done
 fi
 
-echo "changing default shell to zsh"
-chsh -s $(which zsh)
+if [ "$(id -u)" -eq 0 ]; then
+    # Only change the shell if we're root user
+    echo "changing default shell to zsh"
+    chsh -s $(which zsh)
+fi
 
 zsh
